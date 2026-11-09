@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Replays</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="card">
+    <form id="form" novalidate>
+      <label>Arena
+        <select id="arena" required disabled><option value="">Carregando…</option></select>
+      </label>
+      <label>Quadra
+        <select id="court" required disabled><option value="">Escolha a arena</option></select>
+      </label>
+      <div class="row">
+        <label>Data
+          <select id="date" required disabled><option value="">—</option></select>
+        </label>
+        <label>Horário
+          <select id="timeRange" required disabled><option value="">—</option></select>
+        </label>
+      </div>
+      <button id="submit" type="submit" disabled>Buscar vídeos</button>
+    </form>
+
+    <section id="progress" class="status" hidden>
+      <div class="spinner" aria-hidden="true"></div>
+      <p id="progressText">Procurando vídeos…</p>
+      <div class="bar"><div id="barFill"></div></div>
+    </section>
+
+    <section id="result" class="status" hidden>
+      <p id="resultText"></p>
+      <div class="actions">
+        <a id="videoLink" class="button" download>Vídeo único</a>
+        <a id="zipLink" class="button secondary" download>Vídeos separados (.zip)</a>
+      </div>
+      <button id="again" type="button" class="link">Nova busca</button>
+    </section>
+
+    <p id="message" class="message" role="status" hidden></p>
+  </main>
+</body>
+</html>
